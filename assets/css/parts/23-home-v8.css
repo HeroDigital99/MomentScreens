@@ -1,0 +1,31 @@
+/* v8: opening section (videos under heading, full content width) + richer "why us" cards */
+.site-gallery-section{margin:40px 0 10px}
+.site-gallery-section>h2{margin-top:0}
+.opening-videos{display:grid;grid-template-columns:1fr;gap:clamp(16px,2.4vw,28px);margin:18px 0 clamp(16px,2.4vw,28px);width:100%}
+.opening-videos .video-frame{aspect-ratio:16/9;width:100%;padding:clamp(6px,1vw,10px);border-radius:clamp(20px,2.4vw,28px)}
+.opening-videos .video-frame video{object-fit:contain}
+#opening-gallery:empty{display:none}
+#why .card{gap:12px;min-height:170px;justify-content:center;padding:22px 16px}
+#why .card .ico{margin-bottom:4px}
+#why .card .ico svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:720px){#why .card{min-height:150px;padding:16px 10px}.opening-videos .video-frame{padding:5px;border-radius:18px}}
+/* .grid:not(#all) (08-layout-glass) overrides the gap with a bigger value than --g, which pushed the 3rd/4th card onto a new row. Match its specificity so gap = --g again. */
+#why.grid,#best.grid,#new.grid{gap:var(--g)}
+
+/* v8: clients page - sector SVG icon sits in the thumbnail slot (no inner logos, no floating badge) */
+.sector-card{overflow:hidden!important;padding:16px}
+#client-sectors{gap:clamp(16px,2vw,24px);margin-top:18px;padding-top:0}
+.sector-cover.sector-cover-icon{width:96px;height:96px;margin-top:0;border-radius:24px;position:relative;
+  background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(46,230,197,.10) 55%,rgba(34,184,236,.16));
+  border:1px solid rgba(255,255,255,.34);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -8px 18px rgba(46,230,197,.12),0 10px 26px rgba(0,5,20,.4),0 0 24px rgba(46,230,197,.22);
+  transition:transform .35s cubic-bezier(.2,.85,.2,1),box-shadow .35s}
+.sector-cover.sector-cover-icon::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.3),transparent 42%)}
+.sector-cover.sector-cover-icon svg{position:relative;width:52px;height:52px;display:block;overflow:visible;filter:drop-shadow(0 0 7px rgba(46,230,197,.65))}
+.sector-card:hover .sector-cover-icon,.sector-card:active .sector-cover-icon{transform:scale(1.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -8px 18px rgba(46,230,197,.2),0 14px 32px rgba(0,5,20,.5),0 0 36px rgba(46,230,197,.5)}
+.sector-card{grid-template-columns:96px 1fr}
+@media(max-width:720px){.sector-card{grid-template-columns:76px 1fr}.sector-cover.sector-cover-icon{width:76px;height:76px;border-radius:20px}.sector-cover.sector-cover-icon svg{width:42px;height:42px}}
+
+/* v8: opening videos smaller on desktop (centered, not full content width) */
+.opening-videos{max-width:min(100%,760px);margin-inline:auto}
+@media(max-width:720px){.opening-videos{max-width:100%}}

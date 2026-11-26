@@ -1,0 +1,4 @@
+/* Buttons: darker on hover / press (hover also "sticks" after a tap on phones) so the label stays clearly readable */
+.btn:hover,.btn:active{filter:none!important;background:linear-gradient(135deg,rgba(5,24,48,.84),rgba(9,48,84,.74));border-color:rgba(46,230,197,.55);color:#fff}
+.btn.p:hover,.btn.p:active{background:linear-gradient(135deg,#17bfa7,#1a98c8);border:0;color:#03202b;box-shadow:0 6px 20px rgba(26,152,200,.4)}
+.btn:active{transform:translateY(0) scale(.98)}

@@ -1,0 +1,11 @@
+/* One font system: every Arabic glyph = Alexandria, every Latin glyph = Sora (Sora has no Arabic, so Arabic falls through to Alexandria) */
+:root{--font-all:"Sora","Alexandria",system-ui,sans-serif}
+*,*::before,*::after{font-family:var(--font-all)!important}
+
+/* Header nav: first item was clipped because centred overflow cannot be scrolled to. Centre when it fits, start-aligned when it overflows. */
+nav{justify-content:flex-start!important}
+nav>a:first-child{margin-inline-start:auto}
+nav>a:last-child{margin-inline-end:auto}
+
+/* About page (and any .pad card): icon centred above the text */
+.pad>.ico{margin-inline:auto}

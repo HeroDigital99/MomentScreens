@@ -1,0 +1,19 @@
+/* Home page: icons centred above text, and uniform cards (same width/height rhythm in every section) */
+.card>.ico{margin-inline:auto}
+#why,#best,#new{--g:clamp(14px,2vw,24px);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--g)}
+#best>*,#new>*{flex:0 0 calc((100% - 3*var(--g))/4);min-width:0}
+#why>*{flex:0 0 calc((100% - 2*var(--g))/3);min-width:0}
+#why .card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:170px;padding:22px 16px;text-align:center}
+#why .card .ico{width:58px;height:58px;margin:0 auto}
+#why .card .ico svg{width:30px;height:30px}
+#why .card h3{margin:0;font-size:clamp(15px,1.5vw,18px);line-height:1.5}
+#best .product-card,#new .product-card{display:flex;flex-direction:column;align-items:stretch;gap:12px;min-height:0;padding:16px}
+#best .product-image,#new .product-image{flex:0 0 auto;width:100%;aspect-ratio:4/3;min-height:0}
+#best .product-card h3,#new .product-card h3{display:grid;place-items:center;min-height:2.9em;margin:0;font-size:clamp(15px,1.5vw,18px);line-height:1.45}
+#best .product-card-link,#new .product-card-link{margin-top:auto;padding-top:2px;text-align:center}
+@media(max-width:1099px){#best>*,#new>*{flex-basis:calc((100% - 2*var(--g))/3)}}
+@media(max-width:720px){
+  #why>*,#best>*,#new>*{flex-basis:calc((100% - var(--g))/2)}
+  #why .card{min-height:150px;padding:16px 10px}
+  #best .product-card,#new .product-card{padding:12px;gap:9px}
+}
